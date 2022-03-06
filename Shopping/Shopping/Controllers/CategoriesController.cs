@@ -16,7 +16,7 @@ namespace Shopping.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.categories.ToListAsync());
+            return View(await _context.Categories.ToListAsync());
         }
 
         public IActionResult Create()
@@ -63,7 +63,7 @@ namespace Shopping.Controllers
                 return NotFound();
             }
 
-            var category = await _context.categories.FindAsync(id);
+            var category = await _context.Categories.FindAsync(id);
             if (category == null)
             {
                 return NotFound();
@@ -114,7 +114,7 @@ namespace Shopping.Controllers
                 return NotFound();
             }
 
-            var category = await _context.categories
+            var category = await _context.Categories
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
@@ -131,7 +131,7 @@ namespace Shopping.Controllers
                 return NotFound();
             }
 
-            var category = await _context.categories
+            var category = await _context.Categories
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
@@ -145,8 +145,8 @@ namespace Shopping.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var category = await _context.categories.FindAsync(id);
-            _context.categories.Remove(category);
+            var category = await _context.Categories.FindAsync(id);
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
