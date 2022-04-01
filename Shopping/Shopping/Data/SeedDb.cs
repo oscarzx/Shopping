@@ -28,6 +28,7 @@ namespace Shopping.Data
             await _userHelper.CheckRoleAsync(UserType.Admin.ToString());
             await _userHelper.CheckRoleAsync(UserType.User.ToString());
             await CheckUserAsync("1010", "Oscar", "Espinosa", "oscar@yopmail.com", "323 244 0427", "Calle luna calle sol", UserType.Admin);
+            await CheckUserAsync("1010", "Juan", "Perez", "juan@yopmail.com", "310 579 5614", "Cra 4 15-21", UserType.User);
 
         }
 
