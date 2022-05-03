@@ -25,7 +25,7 @@ namespace Shopping.Data.Entities
 
         [DisplayFormat(DataFormatString = "{0:N2}")]
         [Display(Name = "Inventario")]
-        [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+        //[MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public float Stock { get; set; }
 
@@ -42,7 +42,7 @@ namespace Shopping.Data.Entities
         //TODO: Pending to change to the correct path
         [Display(Name = "Foto")]
         public string ImageFullPath => ProductImages == null || ProductImages.Count == 0
-            ? $"https://localhost:7057/images/noimage.png"
+            ? $"https://localhost:7077/images/No_Image.png"
             : ProductImages.FirstOrDefault().ImageFullPath;
     }
 }
